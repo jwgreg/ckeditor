@@ -69,7 +69,7 @@ CKEDITOR.editorConfig = function(config) {
         { 
             name: 'document', 
             items: ['Source', '-','Bold', '-', 'NumberedList', 'BulletedList', 'Table', '-', 'Link', 'Unlink', 'Anchor', '-', 'HrcwidgetbootstrapLeftCol', 
-                    'HrcwidgetbootstrapRightCol', 'HrcwidgetbootstrapTwoCol', 'HrcwidgetbootstrapThreeCol', 'HrcwidgetbootstrapFourCol', '-', 'Hrclisticon', 
+                    'HrcwidgetbootstrapRightCol', 'HrcwidgetbootstrapTwoCol', 'HrcwidgetbootstrapThreeCol', 'HrcwidgetbootstrapFourCol','HrcwidgetbootstrapPanel', '-', 'Hrclisticon', 
                     'Abbr']  
         }, { 
             name: 'styles',     

@@ -1,6 +1,6 @@
 CKEDITOR.plugins.add('hrcwidgetbootstrap', {
     requires: 'widget',
-    icons: 'hrcwidgetbootstrapLeftCol,hrcwidgetbootstrapRightCol,hrcwidgetbootstrapTwoCol,hrcwidgetbootstrapThreeCol,hrcwidgetbootstrapFourCol,hrcwidgetbootstrapThreeColStack',
+    icons: 'hrcwidgetbootstrapLeftCol,hrcwidgetbootstrapRightCol,hrcwidgetbootstrapTwoCol,hrcwidgetbootstrapThreeCol,hrcwidgetbootstrapFourCol,hrcwidgetbootstrapThreeColStack,hrcwidgetbootstrapPanel',
 
     init: function(editor) {
         // Configurable Settings
@@ -154,6 +154,32 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
 
             upcast: function(element) {
                 return element.name == 'div' && element.hasClass('three-col');
+            }
+
+        });
+        
+         editor.widgets.add('hrcwidgetbootstrapPanel', {
+        	button: showButtons ? 'Add Panel' : undefined,
+        	template:
+             '<div class="panel panel-default">' +
+                 '<div class="panel-heading">Enter Title Here</div>' +
+                 '<div class="panel-body">Content Goes Here</div>' +
+             '</div>',
+            editables: {
+            	col1: {
+            		selector: '.panel-heading',
+            		allowedContent: allowedWidget
+            	},
+            	col2: {
+            		selector: '.panel-body',
+            		allowedContent: allowedWidget
+            	}
+            },
+
+            allowedContent: allowedFull,
+
+            upcast: function( element ) {
+                return element.name == 'div' && element.hasClass( 'panel-default' );
             }
 
         });
