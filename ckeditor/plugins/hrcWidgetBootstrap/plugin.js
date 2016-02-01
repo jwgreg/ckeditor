@@ -15,7 +15,7 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
         	button: showButtons ? 'Add HRC left column box' : undefined,
         	template:
              '<div class="row two-col-left">' +
-                 '<div class="col-md-3 col-sidebar"><p><img src="http://placehold.it/300x250&text=Image" /></p></div>' +
+                 '<div class="col-md-3 col-sidebar"><p>Navigation goes here</p></div>' +
                  '<div class="col-md-9 col-main"><p><h2>Title Goes Here</h2></p></div>' +
              '</div>',
             editables: {
@@ -43,8 +43,8 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
 
             template:
                 '<div class="row two-col-right">' +
-                    '<div class="col-md-9 col-main"><p>Content</p></div>' +
-                    '<div class="col-md-3 col-sidebar"><p><img src="http://placehold.it/300x250&text=Image" /></p></div>' +
+                    '<div class="col-md-9 col-main"><p><h2>Text goes here</h2></p></div>' +
+                    '<div class="col-md-3 col-sidebar"><p>Navigation goes here</p></div>' +
                 '</div>',
             editables: {
                 col1: {
@@ -68,8 +68,8 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
         editor.widgets.add('hrcwidgetbootstrapTwoCol', {
             button: showButtons ? 'Add HRC two column box' : undefined,
             template: '<div class="row two-col">' +
-                '<div class="col-md-6 col-xs-12 col-1" style="background: #bfb8ab;"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-6 col-xs-12 col-2"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                '<div class="col-md-6 col-xs-12 col-1"><p>Text goes here</p></div>' +
+                '<div class="col-md-6 col-xs-12 col-2"><p>Text goes here</p></div>' +
                 '</div>',
             editables: {
                 col1: {
@@ -92,9 +92,9 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
             button: showButtons ? 'Add HRC three column box' : undefined,
 
             template: '<div class="row three-col">' +
-                '<div class="col-md-4 col-xs-12 col-1" style="background: #bfb8ab;"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-4 col-xs-12 col-2"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-4 col-xs-12 col-3"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                '<div class="col-md-4 col-xs-12 col-1"><p>Text goes here</p></div>' +
+                '<div class="col-md-4 col-xs-12 col-2"><p>Text goes here</p></div>' +
+                '<div class="col-md-4 col-xs-12 col-3"><p>Text goes here</p></div>' +
                 '</div>',
 
             editables: {
@@ -125,10 +125,10 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
             button: showButtons ? 'Add HRC four column box' : undefined,
 
             template: '<div class="row three-col">' +
-                '<div class="col-md-3 col-xs-12 col-1" style="background: #bfb8ab;"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-3 col-xs-12 col-2"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-3 col-xs-12 col-3"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
-                '<div class="col-md-3 col-xs-12 col-4"><p><img src="http://placehold.it/400x225&text=Image" /></p><p>Text below</p></div>' +
+                '<div class="col-md-3 col-xs-12 col-1"><p>Text goes here</p></div>' +
+                '<div class="col-md-3 col-xs-12 col-2"><p>Text goes here</p></div>' +
+                '<div class="col-md-3 col-xs-12 col-3"><p>Text goes here</p></div>' +
+                '<div class="col-md-3 col-xs-12 col-4"><p>Text goes here</p></div>' +
                 '</div>',
 
             editables: {
