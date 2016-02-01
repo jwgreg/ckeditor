@@ -16,7 +16,7 @@ CKEDITOR.plugins.add('hrcwidgetbootstrap', {
         	template:
              '<div class="row two-col-left">' +
                  '<div class="col-md-3 col-sidebar"><p><img src="http://placehold.it/300x250&text=Image" /></p></div>' +
-                 '<div class="col-md-9 col-main"><p>Content</p></div>' +
+                 '<div class="col-md-9 col-main"><p><h2>Title Goes Here</h2></p></div>' +
              '</div>',
             editables: {
             	col1: {

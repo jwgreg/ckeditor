@@ -61,7 +61,7 @@ CKEDITOR.editorConfig = function(config) {
     config.autoParagraph = false;
 
 
-    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr';
+    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr,hrccontact';
 
 
     // Toolbar configuration for Custom HRC CMS. The SOURCE menu bar option is NOT available to non-admin users.
