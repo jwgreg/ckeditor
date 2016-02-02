@@ -1,3 +1,7 @@
+
+#contactsTable {
+	width: 100%;
+}
 #contactsTable th {
 	font-weight: bold;
 	text-align: center;
