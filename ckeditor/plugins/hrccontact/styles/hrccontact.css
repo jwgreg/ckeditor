@@ -55,5 +55,36 @@ input[type=text] {
 	width: 150px;
 }
 .contactsHolder .addRowBtn {
-	border: 1px oslid black;
+	border: 1px solid black;
 }
+
+.entrycell input {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.btnCol {
+	width: 50px;
+}
+
+.nameCol {
+	width: 120px;
+}
+
+.titleCol {
+	width: 120px;
+}
+
+.emailCol {
+	width: 120px;
+}
+
+.phoneCol {
+	width: 120px;
+}
+
+
+
+
+
+
