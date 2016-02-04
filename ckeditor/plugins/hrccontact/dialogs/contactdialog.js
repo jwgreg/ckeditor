@@ -19,14 +19,19 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 					{
 						type: 'html',
 						html: 	'<div class="contactsHolder">' +
-								'<table id="contactsTable">' +
-								'<th class="btnCol"></th>' +
-								'<th class="btnCol"></th>' +
-								'<th class="nameCol">Name</th>' +
-								'<th class="titleCol">Title</th>' +
-								'<th class="emailCol">Email</th>' +
-								'<th class="phoneCol">Phone</th>' +
-								'</table>' +
+		                        '<table id="contactsTable">' +
+		                        '<thead>' +
+		                        '<tr>' +
+		                        '<th class="btnCol"></th>' +
+		                        '<th class="btnCol"></th>' +
+		                        '<th class="nameCol">Name</th>' +
+		                        '<th class="titleCol">Title</th>' +
+		                        '<th class="emailCol">Email</th>' +
+		                        '<th class="phoneCol">Phone</th>' +
+		                        '</tr>' +
+		                        '</thead>' +
+		                        '<tbody>' +
+		                        '</table>' +
 								'</div>'
 								,
 						setup: function (element) {
@@ -79,7 +84,8 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 							element.setHtml(html);
 							resetDialog();
 						}
-					}, {
+					}, 
+                    {
 						type: 'text',
 						id: 'contactName',
 						label: 'Name:',
@@ -128,7 +134,7 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 						type: 'button',
 						id: 'contactAdd',
 						label: 'Add Contact',
-						onClick: function() {
+						onClick: function(element) {
 							var dialog = this.getDialog();
 							var nameOut = dialog.getContentElement('tab-basic', 'contactName').getValue();
 							var titleOut = dialog.getContentElement('tab-basic', 'contactTitle').getValue();
@@ -136,8 +142,8 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 							var phoneOut = dialog.getContentElement('tab-basic', 'contactPhone').getValue();
 
 							var newRow = '<tr>';
-							newRow += '<td class="btnCol"><button>edit</button></td>';
-							newRow += '<td class="btnCol"><button>delete</button></td>';
+							newRow += '<td class="btnCol"><button onClick="editRecord(' + element + ');"><i class="fa fa-pencil-square-o"></i></button></td>';
+							newRow += '<td class="btnCol"><button onClick="delRecord(' + element + ');"><i class="fa fa-trash"></i></button></td>';
 							newRow += '<td class="nameCol">' + nameOut + '</td>';
 							newRow += '<td class="titleCol">' + titleOut + '</td>';
 							newRow += '<td class="emailCol">' + emailOut + '</td>';
@@ -220,7 +226,7 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 				editor.insertElement(this.element);
 		},
 		onCancel: function() {
-			resetDialog();
+			//resetDialog();
 		}
 		// // Invoked when the dialog is loaded.
 		// onShow: function() {

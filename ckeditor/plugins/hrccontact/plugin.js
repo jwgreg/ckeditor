@@ -5,13 +5,14 @@ CKEDITOR.plugins.add( 'hrccontact', {
 	init: function( editor ) {
 		// Define an editor command that opens our dialog window.
 		var pluginDirectory = this.path;
+		var rootDirectory = document.location.pathname;
 		editor.addCommand( 'hrccontact', new CKEDITOR.dialogCommand( 'contactDialog' ) );
 		editor.ui.addButton( 'Hrccontact', {
 			label: 'Insert Contact',
 			command: 'hrccontact',
 			toolbar: 'insert'
 		});
-		//editor.addContentsCss( pluginDirectory + 'styles/hrccontact.css');	
+		editor.addContentsCss( pluginDirectory + 'styles/hrccontact.css');	
 		if ( editor.contextMenu ) {
 			// Add a context menu group with the Edit Abbreviation item.
 			editor.addMenuGroup( 'hrccontactGroup' );
@@ -33,8 +34,10 @@ CKEDITOR.plugins.add( 'hrccontact', {
 
         if(typeof editor.config.contentsCss == 'object') {
         	editor.config.contentsCss.push(CKEDITOR.getUrl(pluginDirectory + 'styles/hrccontact.css'));
+        	// editor.config.contentsCss.push(CKEDITOR.getUrl(rootDirectory + 'font-awesome/css/font-awesome.min.css'));
         } else {
         	editor.config.contentsCss = [editor.config.contentsCss, CKEDITOR.getUrl(pluginDirectory + 'styles/hrccontact.css')];
+        	// editor.config.contentsCss.push(CKEDITOR.getUrl(rootDirectory + 'font-awesome/css/font-awesome.min.css'));
         }
 	}
 });
@@ -45,4 +48,16 @@ function addRow() {
 
 function resetDialog () {
     $(".contactsHolder").html('<table id="contactsTable"><tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th></tr><tr><td></td><td></td><td></td><td></td></tr></table><input type="button" class="addRowBtn" value="Add Row" onclick="addRow()" />');
+}
+
+function editRecord(element) {
+    alert('Edit');
+}
+
+function delRecord(element) {
+    alert('Delete');
+}
+
+function addRecord() {
+    alert('Add Record');
 }

@@ -29,6 +29,7 @@ CKEDITOR.editorConfig = function(config) {
     config.extraPlugins = 'menu';
     config.extraPlugins = 'floatpanel';
     config.extraPlugins = 'panel';
+    //config.extraPlugins = 'fontawesome';
     // config.extraPlugins = 'widget';
     // config.extraPlugins = 'hrcwidgetbootstrap';
     // config.extraPlugins = 'hrclisticons';
@@ -44,6 +45,8 @@ CKEDITOR.editorConfig = function(config) {
     config.entities_latin = false; // Whether to convert some Latin characters (Latin alphabet No. 1, ISO 8859-1) to HTML entities.
     config.entities_additional = 'nbsp'; // A comma-separated list of additional entities to be used. Entity names or numbers must be used in a form that excludes the '&amp;' prefix and the ';' ending.
 
+    config.contentCss = 'ckeditor/plugins/fontawesome/font-awesome/css/font-awesome.min.css';
+
     config.allowedContent = {
         $1: {
             // Use the ability to specify elements as an object.
@@ -53,7 +56,7 @@ CKEDITOR.editorConfig = function(config) {
             classes: true
         }
     };
-    config.disallowedContent = '*{font*}';
+    //config.disallowedContent = '*{font*}';
 
     // Prevent paragraph tags from being added to modified text.
     config.enterMode = CKEDITOR.ENTER_BR;
@@ -61,7 +64,7 @@ CKEDITOR.editorConfig = function(config) {
     config.autoParagraph = false;
 
 
-    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr,hrccontact';
+    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr,hrccontact,fontawesome,lineutils';
 
 
     // Toolbar configuration for Custom HRC CMS. The SOURCE menu bar option is NOT available to non-admin users.
@@ -110,161 +113,6 @@ CKEDITOR.editorConfig = function(config) {
 
     // Dialog windows are also simplified.
     config.removeDialogTabs = 'link:advanced';
-
-
-
-
-
-
-
-    // config.plugins = 'dialogui,dialog,about,a11yhelp,dialogadvtab,basicstyles,bidi,blockquote,clipboard,button,panelbutton,panel,floatpanel,colorbutton,colordialog,templates,menu,contextmenu,div,resize,toolbar,elementspath,enterkey,entities,popup,filebrowser,find,fakeobjects,flash,floatingspace,listblock,richcombo,font,forms,format,horizontalrule,htmlwriter,iframe,wysiwygarea,image,indent,indentblock,indentlist,smiley,justify,menubutton,language,link,list,liststyle,magicline,maximize,newpage,pagebreak,pastetext,pastefromword,preview,print,removeformat,save,selectall,showblocks,showborders,sourcearea,specialchar,scayt,stylescombo,tab,table,tabletools,undo,wsc,lineutils';
-    // //config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticons,hrccontactlist';
-    // config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticons,abbr';
-    // config.toolbar = [{
-    //     name: 'document',
-    //     groups: ['mode', 'document', 'doctools'],
-    //     //items: ['Source', 'Preview', '-', 'Save', 'NewPage', 'Print', '-', 'Hrclisticons', '-', 'Templates', 'HrcwidgetbootstrapLeftCol', 'HrcwidgetbootstrapRightCol', 'HrcwidgetbootstrapTwoCol', 'HrcwidgetbootstrapThreeCol', 'HrcwidgetbootstrapFourCol', 'HrcwidgetbootstrapThreeColStack', 'Hrccontactlist', '-']
-    //     items: ['Source', 'Preview', '-', 'Save', 'NewPage', 'Print', '-', 'Hrclisticons', '-', 'Templates', 'HrcwidgetbootstrapLeftCol', 'HrcwidgetbootstrapRightCol', 'HrcwidgetbootstrapTwoCol', 'HrcwidgetbootstrapThreeCol', 'HrcwidgetbootstrapFourCol', 'HrcwidgetbootstrapThreeColStack', '-', 'Abbr']
-    // }, {
-    //     name: 'styles',
-    //     items: ['Styles', 'Format']
-    // }, {
-    //     name: 'editing',
-    //     groups: ['undo', 'find', 'format'],
-    //     items: ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat',]
-    // }, {
-    //     name: 'paragraph',
-    //     groups: ['list', 'indent', 'blocks', 'align'],
-    //     items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
-    // }, {
-    //     name: 'clipboard',
-    //     groups: ['clipboard'],
-    //     items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord']
-    // }, ];
-    
-
-    // CKEDITOR.stylesSet.add('default', [{
-    //         name: 'Heading 2',
-    //         element: 'h2'
-    //     }, {
-    //         name: 'Heading 3',
-    //         element: 'h3'
-    //     }, {
-    //         name: 'General Heading',
-    //         element: 'p',
-    //         attributes: {
-    //             'class': 'generalheading'
-    //         }
-    //     }, {
-    //         name: 'Indented',
-    //         element: 'p',
-    //         attributes: {
-    //             'class': 'indented'
-    //         }
-    //     }, {
-    //         name: 'FAQ-Q',
-    //         element: 'p',
-    //         attributes: {
-    //             'class': 'faq_q'
-    //         }
-    //     }, {
-    //         name: 'FAQ-A',
-    //         element: 'p',
-    //         attributes: {
-    //             'class': 'faq_a'
-    //         }
-    //     }, {
-    //         name: 'Callout-Light',
-    //         element: 'div',
-    //         attributes: {
-    //             'class': 'callout-light'
-    //         }
-    //     }, {
-    //         name: 'Callout-Dark',
-    //         element: 'div',
-    //         attributes: {
-    //             'class': 'callout-dark'
-    //         }
-    //     }, {
-    //         name: 'Graphic Bullet',
-    //         element: 'ul',
-    //         attributes: {
-    //             'class': 'graphicbullet'
-    //         }
-    //     }, {
-    //         name: 'Wide Spaced',
-    //         element: 'ul',
-    //         attributes: {
-    //             'class': 'widespaced'
-    //         }
-    //     }, {
-    //         name: 'Medium Spacing',
-    //         element: 'ul',
-    //         attributes: {
-    //             'class': 'mediumspacing'
-    //         }
-    //     }, {
-    //         name: 'No Spacing',
-    //         element: 'ul',
-    //         attributes: {
-    //             'class': 'nospacing'
-    //         }
-    //     }, {
-    //         name: 'Check List',
-    //         element: 'ul',
-    //         attributes: {
-    //             'class': 'checklist'
-    //         }
-    //     }, {
-    //         name: 'Data Table Bordered',
-    //         element: 'table',
-    //         attributes: {
-                
-    //         }
-    //     }, {
-    //         name: 'Table Border',
-    //         element: 'table',
-    //         attributes: {
-    //             'border': '1'
-    //         }
-    //     }, {
-    //         name: 'Data Table Row Color 1',
-    //         element: 'tr',
-    //         attributes: {
-    //             'class': 'datatablerowcolor1'
-    //         }
-    //     }, {
-    //         name: 'Data Table Row Color 2',
-    //         element: 'tr',
-    //         attributes: {
-    //             'class': 'datatablerowcolor2'
-    //         }
-    //     }
-
-
-    // ]);
-
-    // //config.allowedContent = true;
-    // config.allowedContent = {
-    // $1: {
-    //         // Use the ability to specify elements as an object.
-    //         elements: CKEDITOR.dtd,
-    //         attributes: true,
-    //         styles: true,
-    //         classes: true
-    //     }
-    // };
-    // //config.extraAllowedContent = 'abbr[*];';
-    // config.disallowedContent = 'table[*];';
-
-    // // config.allowedContent = 'abbr[*]; div[*]; img[*];' +
-    // //                         'p a div span h2 h3 h4 h5 h6 section article iframe object embed strong b i em cite pre blockquote small';
-
-    // // config.allowedContent = 'p a div span h2 h3 h4 h5 h6 section article iframe object embed strong b i em cite pre blockquote small,' +
-    // //                     'sub sup code ul ol li dl dt dd table thead tbody th tr td img caption mediawrapper br[href,src,target,width,height,colspan,' +
-    // //         'span,alt,name,title,class,id,data-options]{text-align,float,margin}(*);' +
-    // //         'abbr[*];';
-
 
 };
 
