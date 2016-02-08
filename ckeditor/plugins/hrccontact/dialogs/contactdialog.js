@@ -27,6 +27,7 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 						},
 						commit: function( element ) {
 							element.setText( this.getValue() );
+							element.setAttribute( 'name', this.getValue() );
 						}
 					}, {
 						type: 'text',
