@@ -50,14 +50,14 @@ function resetDialog () {
     $(".contactsHolder").html('<table id="contactsTable"><tr><th>Name</th><th>Title</th><th>Email</th><th>Phone</th></tr><tr><td></td><td></td><td></td><td></td></tr></table><input type="button" class="addRowBtn" value="Add Row" onclick="addRow()" />');
 }
 
-function editRecord(element) {
-    alert('Edit');
-}
+// function editRecord(element) {
+//     alert('Edit');
+// }
 
-function delRecord(element) {
-    alert('Delete');
-}
+// function delRecord(element) {
+//     alert('Delete');
+// }
 
-function addRecord() {
-    alert('Add Record');
-}
+// function addRecord() {
+//     alert('Add Record');
+// }

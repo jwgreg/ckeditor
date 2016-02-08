@@ -16,75 +16,6 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 
 				// The tab content.
 				elements: [
-					{
-						type: 'html',
-						html: 	'<div class="contactsHolder">' +
-		                        '<table id="contactsTable">' +
-		                        '<thead>' +
-		                        '<tr>' +
-		                        '<th class="btnCol"></th>' +
-		                        '<th class="btnCol"></th>' +
-		                        '<th class="nameCol">Name</th>' +
-		                        '<th class="titleCol">Title</th>' +
-		                        '<th class="emailCol">Email</th>' +
-		                        '<th class="phoneCol">Phone</th>' +
-		                        '</tr>' +
-		                        '</thead>' +
-		                        '<tbody>' +
-		                        '</table>' +
-								'</div>'
-								,
-						setup: function (element) {
-							var newHtml = '<table id="contactsTable" width="100%">' +
-											'<tr>' +
-											'<th>Name</th>' +
-											'<th>Title</th>' +
-											'<th>Email</th>' +
-											'<th>Phone</th>' +
-											'</tr>';
-							var rows = element.getChildren();
-							for (var r = 0; r < rows.count(); r++) {
-								var row = rows.getItem(r);
-								newHtml += '<tr>';
-								cells = row.getChildren();
-								for( var c = 0; c < cells.count(); c++) {
-									var cell = cells.getItem(c);
-									newHtml += '<td>' +
-												cell.getChildren().getItem(0).getText() +
-												'</td>';
-								}	
-								newHtml += '</tr>';
-							}
-							newHtml += '</table><input type="button" class="addRowBtn" value="Add Row" onclick="addRow()" />';
-							console.log(newHtml);
-							$(".contactsHolder").html(newHtml);
-						},
-						commit: function (element) {
-							var html = '<contacts class="contactsTable">';
-							$.each($(".contactsHolder").find("tr"), function(r) {
-								var row = $(this);
-								if(r != 0) {
-									var item = '<div class="item">';
-									$.each($(row).find("td"), function(c) {
-										var cell = $(this);
-										if (c == 0)
-											item += '<div class="itemMain">' +
-													$(cell).text() +
-													'</div>';
-										else
-											item += '<div class="itemData">' +
-													$(cell).text() +
-													'</div>';
-									});
-									item += '</div>';
-									html += item;
-								}
-							});
-							html += '</contacts>';
-							element.setHtml(html);
-							resetDialog();
-						}
-					}, 
                     {
 						type: 'text',
 						id: 'contactName',
@@ -103,10 +34,10 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 						label: 'Title:',
 						validate: CKEDITOR.dialog.validate.notEmpty(" Title field required."),
 						setup: function( element ) {
-							this.setValue( element.getText() );
+							this.setValue( element.getAttribute( "title" ) );
 						},
 						commit: function( element ) {
-							element.setText( this.getValue() );
+							element.setAttribute( "title", this.getValue() );
 						}
 					}, {
 						type: 'text',
@@ -114,10 +45,10 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 						label: 'Email:',
 						validate: CKEDITOR.dialog.validate.notEmpty(" Email field required."),
 						setup: function( element ) {
-							this.setValue( element.getText() );
+							this.setValue( element.getAttribute( "email" ) );
 						},
 						commit: function( element ) {
-							element.setText( this.getValue() );
+							element.setAttribute( "email", this.getValue() );
 						}
 					}, {
 						type: 'text',
@@ -125,76 +56,22 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 						label: 'Phone:',
 						validate: CKEDITOR.dialog.validate.notEmpty(" Phone field required."),
 						setup: function( element ) {
-							this.setValue( element.getText() );
+							this.setValue( element.getAttribute("phone") );
 						},
 						commit: function( element ) {
-							element.setText( this.getValue() );
+							element.setAttribute( "phone", this.getValue() );
 						}
 					}, {
-						type: 'button',
-						id: 'contactAdd',
-						label: 'Add Contact',
-						onClick: function(element) {
-							var dialog = this.getDialog();
-							var nameOut = dialog.getContentElement('tab-basic', 'contactName').getValue();
-							var titleOut = dialog.getContentElement('tab-basic', 'contactTitle').getValue();
-							var emailOut = dialog.getContentElement('tab-basic', 'contactEmail').getValue();
-							var phoneOut = dialog.getContentElement('tab-basic', 'contactPhone').getValue();
-
-							var newRow = '<tr>';
-							newRow += '<td class="btnCol"><button onClick="editRecord(' + element + ');"><i class="fa fa-pencil-square-o"></i></button></td>';
-							newRow += '<td class="btnCol"><button onClick="delRecord(' + element + ');"><i class="fa fa-trash"></i></button></td>';
-							newRow += '<td class="nameCol">' + nameOut + '</td>';
-							newRow += '<td class="titleCol">' + titleOut + '</td>';
-							newRow += '<td class="emailCol">' + emailOut + '</td>';
-							newRow += '<td class="phoneCol">' + phoneOut + '</td>';
-							newRow += '</tr>';
-							$("#contactsTable").append(newRow);
-
-							// Clear Input fields
-							dialog.getContentElement('tab-basic', 'contactName').setValue('');
-							dialog.getContentElement('tab-basic', 'contactTitle').setValue('');
-							dialog.getContentElement('tab-basic', 'contactEmail').setValue('');
-							dialog.getContentElement('tab-basic', 'contactPhone').setValue('');
-							// alert('Clicked - ' + nameOut + ', ' + titleOut + ', ' + emailOut + ', ' + phoneOut );
+						type: 'text',
+						id: 'contactUrl',
+						label: 'Url:',
+						setup: function( element ) {
+							this.setValue( element.getAttribute("url") );
+						},
+						commit: function( element ) {
+							element.setAttribute( "url", this.getValue() );
 						}
 					}
-					// , 
-					// {
-					// 	// Text input field for the abbreviation text.
-					// 	type: 'text',
-					// 	id: 'abbr',
-					// 	label: 'Abbreviation',
-
-					// 	// Validation checking whether the field is not empty.
-					// 	validate: CKEDITOR.dialog.validate.notEmpty( "Abbreviation field cannot be empty." ),
-
-					// 	// Called by the main setupContent method call on dialog initialization.
-					// 	setup: function( element ) {
-					// 		this.setValue( element.getText() );
-					// 	},
-
-					// 	// Called by the main commitContent method call on dialog confirmation.
-					// 	commit: function( element ) {
-					// 		element.setText( this.getValue() );
-					// 	}
-					// }, {
-					// 	// Text input field for the abbreviation title (explanation).
-					// 	type: 'text',
-					// 	id: 'title',
-					// 	label: 'Explanation',
-					// 	validate: CKEDITOR.dialog.validate.notEmpty( "Explanation field cannot be empty." ),
-
-					// 	// Called by the main setupContent method call on dialog initialization.
-					// 	setup: function( element ) {
-					// 		this.setValue( element.getAttribute( "title" ) );
-					// 	},
-
-					// 	// Called by the main commitContent method call on dialog confirmation.
-					// 	commit: function( element ) {
-					// 		element.setAttribute( "title", this.getValue() );
-					// 	}
-					// }
 				]
 			}
 		],
@@ -204,10 +81,10 @@ CKEDITOR.dialog.add( 'contactDialog', function( editor ) {
 			var element = selection.getStartElement();
 
 			if(element)
-				element = element.getAscendant('contacts', true);
+				element = element.getAscendant('hrc-contact', true);
 
-			if(!element || element.getName() != 'contacts') {
-				element = editor.document.createElement('div');
+			if(!element || element.getName() != 'hrc-contact') {
+				element = editor.document.createElement('hrc-contact');
 				this.insertMode = true;
 			} else {
 				this.insertMode = false;
