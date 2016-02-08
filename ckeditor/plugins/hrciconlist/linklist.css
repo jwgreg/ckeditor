@@ -1,0 +1,314 @@
+﻿/*--- 32 x 32 Insignias ---*/
+.insigniaParent {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.insigniaParent li {
+  list-style-type: none;
+  padding-top: 4px;
+  padding-left: 38px;
+  margin-bottom: 4px;
+  line-height: 1.5em;
+  position: relative;
+}
+.insigniaParent li:before {
+  position: absolute;
+  margin: -4px 0 0 -35px;
+  min-height: 40px;
+  background: url('../images/Sprite_Insignias.png') no-repeat;
+  width: 32px;
+  content: "";
+  vertical-align: middle;
+}
+.insigniaParent li#empty_Insignia:before {
+  background-position: 0 0;
+}
+.insigniaParent li#acq_Corps_Insignia:before {
+  background-position: -40px 0;
+}
+.insigniaParent li#ag_Insignia:before {
+  background-position: -80px 0;
+}
+.insigniaParent li#air_Defense_Artillery_Insignia:before {
+  background-position: -120px 0;
+}
+.insigniaParent li#amd_Dental_Corps_Insignia:before {
+  background-position: -160px 0;
+}
+.insigniaParent li#amd_Med_Corps_Insignia:before {
+  background-position: -200px 0;
+}
+.insigniaParent li#amd_Med_Service_Corps_Insignia:before {
+  background-position: -240px 0;
+}
+.insigniaParent li#amd_Med_Specialist_Corps_Insignia:before {
+  background-position: -280px 0;
+}
+.insigniaParent li#amd_Nurse_Corps_Insignia:before {
+  background-position: -320px 0;
+}
+.insigniaParent li#amd_Vet_Corps_Insignia:before {
+  background-position: -360px 0;
+}
+.insigniaParent li#armor_Insignia:before {
+  background-position: -400px 0;
+}
+.insigniaParent li#aviation_Insignia:before {
+  background-position: -440px 0;
+}
+.insigniaParent li#chaplain_Insignia:before {
+  background-position: -480px 0;
+}
+.insigniaParent li#chemical_Corps_Insignia:before {
+  background-position: -520px 0;
+}
+.insigniaParent li#civil_Affairs_Insignia:before {
+  background-position: -560px 0;
+}
+.insigniaParent li#elec_Warfare_Insignia:before {
+  background-position: -600px 0;
+}
+.insigniaParent li#engineer_Insignia:before {
+  background-position: -640px 0;
+}
+.insigniaParent li#field_Artillery_Insignia:before {
+  background-position: -680px 0;
+}
+.insigniaParent li#finance_Corps_Insignia:before {
+  background-position: -720px 0;
+}
+.insigniaParent li#ig_Insignia:before {
+  background-position: -760px 0;
+}
+.insigniaParent li#infantry_Insignia:before {
+  background-position: -800px 0;
+}
+.insigniaParent li#jag_Insignia:before {
+  background-position: -840px 0;
+}
+.insigniaParent li#logistics_Insignia:before {
+  background-position: -880px 0;
+}
+.insigniaParent li#mi_Branch_Insignia:before {
+  background-position: -920px 0;
+}
+.insigniaParent li#mp_Insignia:before {
+  background-position: -960px 0;
+}
+.insigniaParent li#ordnance_Branch_Insignia:before {
+  background-position: -1000px 0;
+}
+.insigniaParent li#pao_Insignia:before {
+  background-position: -1040px 0;
+}
+.insigniaParent li#psych_Ops_Branch_Insignia:before {
+  background-position: -1080px 0;
+}
+.insigniaParent li#quartermaster_Corps_Insignia:before {
+  background-position: -1120px 0;
+}
+.insigniaParent li#signal_Corps_Insignia:before {
+  background-position: -1160px 0;
+}
+.insigniaParent li#special_Forces_Insignia:before {
+  background-position: -1200px 0;
+}
+.insigniaParent li#transportation_Corps_Insignia:before {
+  background-position: -1240px 0;
+}
+/*---  32 x 32 Plaques  ---*/
+.plaqueParent {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.plaqueParent li {
+  list-style-type: none;
+  padding-top: 4px;
+  padding-left: 38px;
+  margin-bottom: 4px;
+  line-height: 2.5em;
+  position: relative;
+}
+.plaqueParent li:before {
+  position: absolute;
+  margin: -4px 0 0 -35px;
+  min-height: 40px;
+  background: url('../images/Sprite_Plaques.png') no-repeat;
+  width: 32px;
+  content: "";
+  vertical-align: middle;
+}
+.plaqueParent li#empty_Plaque:before {
+  background-position: 0 0;
+}
+.plaqueParent li#acq_Corps_Plaque:before {
+  background-position: -40px 0;
+}
+.plaqueParent li#ag_Plaque:before {
+  background-position: -80px 0;
+}
+.plaqueParent li#air_Defense_Artillery_Plaque:before {
+  background-position: -120px 0;
+}
+.plaqueParent li#amd_Dental_Corps_Plaque:before {
+  background-position: -160px 0;
+}
+.plaqueParent li#amd_Med_Corps_Plaque:before {
+  background-position: -200px 0;
+}
+.plaqueParent li#amd_Med_Service_Corps_Plaque:before {
+  background-position: -240px 0;
+}
+.plaqueParent li#amd_Med_Specialist_Corps_Plaque:before {
+  background-position: -280px 0;
+}
+.plaqueParent li#amd_Nurse_Corps_Plaque:before {
+  background-position: -320px 0;
+}
+.plaqueParent li#amd_Vet_Corps_Plaque:before {
+  background-position: -360px 0;
+}
+.plaqueParent li#armor_Plaque:before {
+  background-position: -400px 0;
+}
+.plaqueParent li#aviation_Plaque:before {
+  background-position: -440px 0;
+}
+.plaqueParent li#chaplain_Plaque:before {
+  background-position: -480px 0;
+}
+.plaqueParent li#chemical_Corps_Plaque:before {
+  background-position: -520px 0;
+}
+.plaqueParent li#civil_Affairs_Plaque:before {
+  background-position: -560px 0;
+}
+.plaqueParent li#elec_Warfare_Plaque:before {
+  background-position: -600px 0;
+}
+.plaqueParent li#engineer_Plaque:before {
+  background-position: -640px 0;
+}
+.plaqueParent li#field_Artillery_Plaque:before {
+  background-position: -680px 0;
+}
+.plaqueParent li#finance_Corps_Plaque:before {
+  background-position: -720px 0;
+}
+.plaqueParent li#ig_Plaque:before {
+  background-position: -760px 0;
+}
+.plaqueParent li#infantry_Plaque:before {
+  background-position: -800px 0;
+}
+.plaqueParent li#jag_Plaque:before {
+  background-position: -840px 0;
+}
+.plaqueParent li#logistics_Plaque:before {
+  background-position: -880px 0;
+}
+.plaqueParent li#mi_Branch_Plaque:before {
+  background-position: -920px 0;
+}
+.plaqueParent li#mp_Plaque:before {
+  background-position: -960px 0;
+}
+.plaqueParent li#ordnance_Branch_Plaque:before {
+  background-position: -1000px 0;
+}
+.plaqueParent li#pao_Plaque:before {
+  background-position: -1040px 0;
+}
+.plaqueParent li#psych_Ops_Branch_Plaque:before {
+  background-position: -1080px 0;
+}
+.plaqueParent li#quartermaster_Corps_Plaque:before {
+  background-position: -1120px 0;
+}
+.plaqueParent li#signal_Corps_Plaque:before {
+  background-position: -1160px 0;
+}
+.plaqueParent li#special_Forces_Plaque:before {
+  background-position: -1200px 0;
+}
+.plaqueParent li#transportation_Corps_Plaque:before {
+  background-position: -1160px 0;
+}
+/*---   32 x 32 Logos   ---*/
+.logoParent {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.logoParent li {
+  list-style-type: none;
+  padding-top: 4px;
+  padding-left: 38px;
+  margin-bottom: 4px;
+  line-height: 1.5em;
+  position: relative;
+}
+.logoParent li:before {
+  position: absolute;
+  margin: -4px 0 0 -35px;
+  min-height: 40px;
+  background: url('../images/Sprite_Logos.png') no-repeat;
+  width: 32px;
+  content: "";
+  vertical-align: middle;
+}
+.logoParent li#ag_Logo:before {
+  background-position: 0 0;
+}
+.logoParent li#aces_Logo:before {
+  background-position: -40px 0;
+}
+.logoParent li#epfmd_Logo:before {
+  background-position: -80px 0;
+}
+.logoParent li#fa30_Logo:before {
+  background-position: -120px 0;
+}
+.logoParent li#fa57_Logo:before {
+  background-position: -160px 0;
+}
+.logoParent li#fao_Logo:before {
+  background-position: -200px 0;
+}
+.logoParent li#force_Sustain_Logo:before {
+  background-position: -240px 0;
+}
+.logoParent li#hrc_Logo:before {
+  background-position: -280px 0;
+}
+.logoParent li#osed_Logo:before {
+  background-position: -320px 0;
+}
+.logoParent li#persinsd_Logo:before {
+  background-position: -360px 0;
+}
+.logoParent li#reserve_Logo:before {
+  background-position: -400px 0;
+}
+.logoParent li#sfltap_Logo:before {
+  background-position: -440px 0;
+}
+.logoParent li#space_Ops_Logo:before {
+  background-position: -480px 0;
+}
+/*# sourceMappingURL=insignia.css.map */
+
+
+#linksTable {
+    width: 100%;
+    border: thin solid black;
+}
+#linksTable th {
+    border: thin solid black;
+    font-weight: bold;
+    padding-left: .5em;
+}
+
+
