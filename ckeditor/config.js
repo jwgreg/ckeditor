@@ -2,6 +2,16 @@
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
+// CKEditor.config.allowedContent = {
+//     $1: {
+//         // Use the ability to specify elements as an object.
+//         elements: CKEDITOR.dtd,
+//         attributes: true,
+//         styles: true,
+//         classes: true
+//     }
+// };
+
 
 CKEDITOR.editorConfig = function(config) {
 
@@ -58,13 +68,15 @@ CKEDITOR.editorConfig = function(config) {
     };
     //config.disallowedContent = '*{font*}';
 
+    config.extraAllowedContent = 'hrc-contact[*]'
+
     // Prevent paragraph tags from being added to modified text.
     config.enterMode = CKEDITOR.ENTER_BR;
     config.shiftenterMode = CKEDITOR.ENTER_P;
     config.autoParagraph = false;
 
 
-    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr,hrccontact,fontawesome,lineutils';
+    config.extraPlugins = 'widget,hrcwidgetbootstrap,hrclisticon,abbr,hrccontact,lineutils';
 
 
     // Toolbar configuration for Custom HRC CMS. The SOURCE menu bar option is NOT available to non-admin users.
